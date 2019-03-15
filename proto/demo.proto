@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package demo;
+
+message RequestData {
+    string data = 1;
+}
+
+message ResponseData {
+    int64 return_code = 1;
+    string message = 2;
+    string data = 3;
+}
+
+service DemoService {
+
+    rpc CreateOne(RequestData) returns (ResponseData) {}
+    rpc DeleteOne(RequestData) returns (ResponseData) {}
+    rpc TransferOne(RequestData) returns (ResponseData) {}
+    rpc GetCreateNotify(RequestData) returns (ResponseData) {}
+
+}
